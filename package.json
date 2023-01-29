@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "@vee-validate/rules": "^4.7.3",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
+    "vee-validate": "^4.7.3",
     "vue": "^3.2.13",
     "vue-draggable": "^2.0.6",
     "vue-router": "^4.0.3",
