@@ -4,11 +4,10 @@
         <v-card>
           <v-card-title class="headline">Create New Task</v-card-title>
           <v-form ref="form">
-            <v-text-field label="Title" v-model="title" required />
-            <v-textarea label="Description" v-model="description" required />
-            <v-file-input label="Upload a File" v-model="file" :show-size="d" required />
+            <v-textarea label="Description" v-model="$store.state.description" required />
+            <v-file-input label="Upload a File" v-model="$store.state.file" :show-size="d" required />
             <v-img v-if="file" :src="file" :alt="file.name" width="100" height="100" />
-            <v-date-picker label="Estimated Time" v-model="date" required />
+            <v-date-picker label="Estimated Time" v-model="$store.state.date" required />
             <v-select label="Select Board" v-model="board" :items="boards" required />
             <v-combobox label="Tags" v-model="tags" :items="tagItems" multiple chips required />
           </v-form>
@@ -27,10 +26,8 @@ export default {
     name: 'Store',
     data() {
         return {
-            title: '',
-            description: '',
-            file: null,
-            date: null,
+            
+           
             board: '',
             boards: ['Pending', 'Processing', 'Done'],
             tags: [],

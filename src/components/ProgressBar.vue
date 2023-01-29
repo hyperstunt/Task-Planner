@@ -2,28 +2,46 @@
   <div class="progress">
     <h3>Progress</h3>
     <div class="progress-bar">
-      <div class="progress-bar-fill" :style="{ width: computedProgress }"> </div>
-      <p> {{ computedProgress }}</p>
+      <div
+        class="progress-bar-fill"
+        :style="{ width: progressValue + '%', backgroundColor: colorBar }"
+      ></div>
+      <p>{{ progressValue }}</p>
+      <!-- // 0 - 100 -->
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
-  name: 'ProgressBar',
-
-  data() {
-    return {
-      tasks: 4,
-      completed: 1,
-    }
+  name: "ProgressBar",
+  props: {
+    progress: {
+      default: null,
+    },
   },
-  computed: {
-    computedProgress() {
-      return `${(this.completed / this.tasks) * 100}%`
-    }
-  }
-}
+  setup(props) {
+    const store = useStore();
+    const progressValue = computed(() => {
+      if (props.progress === null) return store.getters.progressValue;
+      return props.progress;
+    });
+
+    const colorBar = computed(() => {
+      return progressValue > 0 && progressValue <= 50 ? "yellow" : "green";
+    });
+    console.log('colorBar',colorBar)
+    console.log('progressValues',progressValue)
+    console.log('progressValues>0',progressValue._value>0)
+
+    return {
+      colorBar,
+      progressValue,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -57,4 +75,3 @@ export default {
   border-radius: 15px;
 }
 </style>
-

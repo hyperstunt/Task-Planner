@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.inline-width{
+/* .inline-width{
   margin-inline: 3%;
-}
+} */
 </style>
