@@ -81,9 +81,6 @@
                             </span>
 
 
-                            <span v-if="item.priortyList"><strong>Tags</strong>
-                                <br />
-                            </span>
                             <div v-for="picker in item.priortyList">
                                     {{ picker }}</div>
 
@@ -137,9 +134,6 @@
                             </span>
 
 
-                            <span v-if="item.priortyList"><strong>Tags</strong>
-                                <br />
-                            </span>
                             <div v-for="picker in item.priortyList">
                                     {{ picker }}</div>
 
@@ -192,9 +186,6 @@
                             </span>
 
 
-                            <span v-if="item.priortyList"><strong>Tags</strong>
-                                <br />
-                            </span>
                             <div v-for="picker in item.priortyList">
                                     {{ picker }}</div>
 

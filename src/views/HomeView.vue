@@ -6,7 +6,7 @@
 
 <script>
 import ProgressBar from "../components/ProgressBar.vue";
-import BoardComponent from "../components/BordComponent.vue";
+import BoardComponent from "../components/BoardComponent.vue";
 
 
 export default {
